@@ -16,6 +16,7 @@
 		115D15E125A1E67E00010855 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115D15E025A1E67E00010855 /* Preview Assets.xcassets */; };
 		115D15EE25A1E70B00010855 /* ProgrammingTodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D15ED25A1E70B00010855 /* ProgrammingTodoList.swift */; };
 		11CEF49425A485BA0035A93D /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEF49325A485BA0035A93D /* Shapes.swift */; };
+		11CEF49825A489290035A93D /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEF49725A489290035A93D /* RoundedViews.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		115D15E225A1E67E00010855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		115D15ED25A1E70B00010855 /* ProgrammingTodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingTodoList.swift; sourceTree = "<group>"; };
 		11CEF49325A485BA0035A93D /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		11CEF49725A489290035A93D /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 				115D15DB25A1E67E00010855 /* ContentView.swift */,
 				1117B3EF25A3DCAA00F990A7 /* TextViews.swift */,
 				11CEF49325A485BA0035A93D /* Shapes.swift */,
+				11CEF49725A489290035A93D /* RoundedViews.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -248,6 +251,7 @@
 				115D15DC25A1E67E00010855 /* ContentView.swift in Sources */,
 				115D15DA25A1E67E00010855 /* BullseyeApp.swift in Sources */,
 				1117B3F025A3DCAA00F990A7 /* TextViews.swift in Sources */,
+				11CEF49825A489290035A93D /* RoundedViews.swift in Sources */,
 				11583A3225A2419D0070722B /* Game.swift in Sources */,
 				11CEF49425A485BA0035A93D /* Shapes.swift in Sources */,
 			);
