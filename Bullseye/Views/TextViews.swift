@@ -61,16 +61,44 @@ struct LabelText: View {
   }
 }
 
+struct BodyText: View {
+  var text: String
+  
+  var body: some View {
+    Text(text)
+      .fontWeight(.semibold)
+      .foregroundColor(Color("TextColor"))
+      .font(.subheadline)
+      .multilineTextAlignment(.center)
+      .lineSpacing(12.0)
+  }
+}
+
+struct ButtonText: View {
+  var text: String
+  
+  var body: some View {
+    Text(text)
+      .bold()
+      .frame(maxWidth: .infinity)
+      .padding()
+      .background(Color.accentColor)
+      .cornerRadius(12.0)
+      .foregroundColor(.white)
+  }
+}
+
 struct TextViews_Previews: PreviewProvider {
   static var previews: some View {
     VStack {
-      InstructionText(text: "Put the bullseye as close as you can to")
-        .padding(.leading, 30.0)
-        .padding(.trailing, 30.0)
-      
-      BigNumberText(number: 50)
-      
-      LabelText(text: "DUMMY")
+//      InstructionText(text: "Put the bullseye as close as you can to")
+//        .padding(.leading, 30.0)
+//        .padding(.trailing, 30.0)
+//      BigNumberText(number: 50)
+//      LabelText(text: "DUMMY")
+      BodyText(text: "You scored 200 points\n🎉🎉🎉")
+      ButtonText(text: "Start new round")
+        .padding()
     }
   }
 }
