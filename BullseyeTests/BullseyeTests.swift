@@ -54,5 +54,15 @@ class BullseyeTests: XCTestCase {
     let score = game.points(sliderValue: guess)
     XCTAssertEqual(score, 98 + 50)
   }
+  
+  func testNewRestart() {
+    game.startNewRound(points: 100)
+    XCTAssertNotEqual(game.score, 0)
+    XCTAssertNotEqual(game.round, 13)
+    game.restart()
+    XCTAssertEqual(game.score, 0)
+    XCTAssertEqual(game.round, 1)
+  }
 }
+
 
