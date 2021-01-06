@@ -17,8 +17,9 @@ struct BackgroundView: View {
       BottomView(game: $game)
     }
     .padding()
-    .background(Color("BackgroundColor").edgesIgnoringSafeArea(.all))
-    
+    .background(
+      RingsView()
+    )
   }
 }
 
@@ -47,6 +48,23 @@ struct TopView: View {
         }
         Spacer()
         RoundedImageViewFilled(systemName: "list.dash")
+      }
+    }
+  }
+}
+
+struct RingsView: View {
+  var body: some View {
+    ZStack {
+      Color("BackgroundColor")
+        .edgesIgnoringSafeArea(.all)
+      
+      ForEach(1..<6) { ring in
+        let size = CGFloat(ring * 100)
+        Circle()
+          .stroke(lineWidth: 20.0)
+          .fill(RadialGradient(gradient: Gradient(colors: [Color("RingsColor").opacity(0.3 * 0.8), Color("RingsColor").opacity(0)]), center: .center, startRadius: 100, endRadius: 300))
+          .frame(width: size, height: size)
       }
     }
   }
