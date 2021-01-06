@@ -12,9 +12,6 @@ struct InstructionText: View {
   
   var body: some View {
     VStack {
-      Text("🎯🎯🎯")
-        .font(.largeTitle)
-      
       Text(text.uppercased())
         .bold()
         .kerning(2.0)
