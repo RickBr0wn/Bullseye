@@ -15,8 +15,12 @@
 		115D15DE25A1E67E00010855 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115D15DD25A1E67E00010855 /* Assets.xcassets */; };
 		115D15E125A1E67E00010855 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 115D15E025A1E67E00010855 /* Preview Assets.xcassets */; };
 		115D15EE25A1E70B00010855 /* ProgrammingTodoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 115D15ED25A1E70B00010855 /* ProgrammingTodoList.swift */; };
-		11CEF49425A485BA0035A93D /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEF49325A485BA0035A93D /* Shapes.swift */; };
 		11CEF49825A489290035A93D /* RoundedViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEF49725A489290035A93D /* RoundedViews.swift */; };
+		11CEF49C25A492160035A93D /* BackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEF49B25A492160035A93D /* BackgroundView.swift */; };
+		11CEF4A025A492840035A93D /* InstructionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEF49F25A492840035A93D /* InstructionsView.swift */; };
+		11CEF4A425A492B50035A93D /* HitMeButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEF4A325A492B50035A93D /* HitMeButtonView.swift */; };
+		11CEF4A825A493390035A93D /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEF4A725A493390035A93D /* SliderView.swift */; };
+		11CEF4AC25A493900035A93D /* Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CEF4AB25A493900035A93D /* Random.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,8 +46,12 @@
 		115D15E025A1E67E00010855 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		115D15E225A1E67E00010855 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		115D15ED25A1E70B00010855 /* ProgrammingTodoList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgrammingTodoList.swift; sourceTree = "<group>"; };
-		11CEF49325A485BA0035A93D /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		11CEF49725A489290035A93D /* RoundedViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedViews.swift; sourceTree = "<group>"; };
+		11CEF49B25A492160035A93D /* BackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundView.swift; sourceTree = "<group>"; };
+		11CEF49F25A492840035A93D /* InstructionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionsView.swift; sourceTree = "<group>"; };
+		11CEF4A325A492B50035A93D /* HitMeButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HitMeButtonView.swift; sourceTree = "<group>"; };
+		11CEF4A725A493390035A93D /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
+		11CEF4AB25A493900035A93D /* Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Random.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,8 +77,11 @@
 			children = (
 				115D15DB25A1E67E00010855 /* ContentView.swift */,
 				1117B3EF25A3DCAA00F990A7 /* TextViews.swift */,
-				11CEF49325A485BA0035A93D /* Shapes.swift */,
 				11CEF49725A489290035A93D /* RoundedViews.swift */,
+				11CEF49B25A492160035A93D /* BackgroundView.swift */,
+				11CEF49F25A492840035A93D /* InstructionsView.swift */,
+				11CEF4A325A492B50035A93D /* HitMeButtonView.swift */,
+				11CEF4A725A493390035A93D /* SliderView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -90,6 +101,7 @@
 				115D15D925A1E67E00010855 /* BullseyeApp.swift */,
 				115D15DD25A1E67E00010855 /* Assets.xcassets */,
 				115D15E225A1E67E00010855 /* Info.plist */,
+				11CEF4AB25A493900035A93D /* Random.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -249,11 +261,15 @@
 			files = (
 				115D15EE25A1E70B00010855 /* ProgrammingTodoList.swift in Sources */,
 				115D15DC25A1E67E00010855 /* ContentView.swift in Sources */,
+				11CEF49C25A492160035A93D /* BackgroundView.swift in Sources */,
 				115D15DA25A1E67E00010855 /* BullseyeApp.swift in Sources */,
+				11CEF4A825A493390035A93D /* SliderView.swift in Sources */,
+				11CEF4A425A492B50035A93D /* HitMeButtonView.swift in Sources */,
 				1117B3F025A3DCAA00F990A7 /* TextViews.swift in Sources */,
 				11CEF49825A489290035A93D /* RoundedViews.swift in Sources */,
+				11CEF4AC25A493900035A93D /* Random.swift in Sources */,
 				11583A3225A2419D0070722B /* Game.swift in Sources */,
-				11CEF49425A485BA0035A93D /* Shapes.swift in Sources */,
+				11CEF4A025A492840035A93D /* InstructionsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

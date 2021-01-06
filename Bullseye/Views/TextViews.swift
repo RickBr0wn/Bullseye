@@ -44,6 +44,20 @@ struct SliderLabelText: View {
     Text(text)
       .bold()
       .foregroundColor(Color("TextColor"))
+      .frame(width: 35.0)
+  }
+}
+
+struct LabelText: View {
+  var text: String
+  
+  var body: some View {
+    Text(text)
+      .font(.caption)
+      .bold()
+      .foregroundColor(Color("TextColor"))
+      .kerning(1.5)
+      .padding(.bottom, 2)
   }
 }
 
@@ -55,6 +69,8 @@ struct TextViews_Previews: PreviewProvider {
         .padding(.trailing, 30.0)
       
       BigNumberText(number: 50)
+      
+      LabelText(text: "DUMMY")
     }
   }
 }

@@ -34,6 +34,25 @@ class BullseyeTests: XCTestCase {
   func testScorePerfect() {
     let guess = game.target
     let score = game.points(sliderValue: guess)
-    XCTAssertEqual(score, 100)
+    XCTAssertEqual(score, 200)
+  }
+  
+  func testNewRound() {
+    game.startNewRound(points: 100)
+    XCTAssertEqual(game.score, 100)
+    XCTAssertEqual(game.round, 2)
+  }
+  
+  func testScoreExact() {
+    let guess = game.target
+    let score = game.points(sliderValue: guess)
+    XCTAssertEqual(score, 200)
+  }
+  
+  func testScoreMissedWithinTwo() {
+    let guess = game.target + 2
+    let score = game.points(sliderValue: guess)
+    XCTAssertEqual(score, 98 + 50)
   }
 }
+
