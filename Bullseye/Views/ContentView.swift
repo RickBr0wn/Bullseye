@@ -18,17 +18,20 @@ struct ContentView: View {
       
       VStack {
         InstructionsView(game: $game)
-          .padding(.bottom, alertIsVisible ? 0 : 100)
+          .padding(.bottom, alertIsVisible ? .zero : 100)
         
         if alertIsVisible {
           PointsView(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+            .transition(.scale)
         } else {
           HitMeButtonView(alertIsVisible: $alertIsVisible, sliderValue: $sliderValue, game: $game)
+            .transition(.scale)
         }
       }
       
       if !alertIsVisible {
         SliderView(sliderValue: $sliderValue)
+          .transition(.scale)
       }
     }
   }
@@ -39,7 +42,7 @@ struct ContentView_Previews: PreviewProvider {
     ContentView()
     
     ContentView()
-      .previewLayout(.fixed(width: 568, height: 320))
+      .previewLayout(.fixed(width: Constants.Previews.previewLandscapeWidth, height: Constants.Previews.previewLandscapeHeight))
       .padding()
     
     ContentView()
@@ -47,7 +50,7 @@ struct ContentView_Previews: PreviewProvider {
     
     ContentView()
       .preferredColorScheme(.dark)
-      .previewLayout(.fixed(width: 568, height: 320))
+      .previewLayout(.fixed(width: Constants.Previews.previewLandscapeWidth, height: Constants.Previews.previewLandscapeHeight))
       .padding()
   }
 }

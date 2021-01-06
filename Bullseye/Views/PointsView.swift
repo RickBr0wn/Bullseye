@@ -21,7 +21,9 @@ struct PointsView: View {
       BigNumberText(number: roundedValue)
       BodyText(text: "You scored \(points) points\n🎉🎉🎉")
       Button(action: {
-        alertIsVisible = false
+        withAnimation {
+          alertIsVisible = false
+        }
         game.startNewRound(points: points)
       }) {
         ButtonText(text: "Start new round")
@@ -30,8 +32,9 @@ struct PointsView: View {
     .padding()
     .frame(maxWidth: 300)
     .background(Color("BackgroundColor"))
-    .cornerRadius(21.0)
+    .cornerRadius(Constants.General.roundRectCornerRadius)
     .shadow(radius: 10, x: 5, y: 5)
+    .transition(.scale)
   }
 }
 
@@ -45,7 +48,7 @@ struct PointsView_Previews: PreviewProvider {
       PointsView(alertIsVisible: alertIsVisible, sliderValue: sliderValue, game: game)
       
       PointsView(alertIsVisible: alertIsVisible, sliderValue: sliderValue, game: game)
-        .previewLayout(.fixed(width: 568, height: 320))
+        .previewLayout(.fixed(width: Constants.Previews.previewLandscapeWidth, height: Constants.Previews.previewLandscapeHeight))
         .padding()
       
       PointsView(alertIsVisible: alertIsVisible, sliderValue: sliderValue, game: game)
@@ -53,7 +56,7 @@ struct PointsView_Previews: PreviewProvider {
       
       PointsView(alertIsVisible: alertIsVisible, sliderValue: sliderValue, game: game)
         .preferredColorScheme(.dark)
-        .previewLayout(.fixed(width: 568, height: 320))
+        .previewLayout(.fixed(width: Constants.Previews.previewLandscapeWidth, height: Constants.Previews.previewLandscapeHeight))
         .padding()
 
     }
