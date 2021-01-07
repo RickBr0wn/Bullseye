@@ -22,4 +22,10 @@ enum Constants {
     public static let previewLandscapeWidth = CGFloat(568.0)
     public static let previewLandscapeHeight = CGFloat(320.0)
   }
+  
+  enum Leaderboard {
+    public static let leaderboardScoreColumnWidth = CGFloat(50.0)
+    public static let leaderboardDateColumnWidth = CGFloat(170.0)
+    public static let leaderboardMaxiumRowWidth = CGFloat(480.0)
+  }
 }
