@@ -9,7 +9,60 @@ import SwiftUI
 
 struct LeaderboardView: View {
   var body: some View {
-    RowView(index: 1, score: 60, date: Date())
+    ZStack {
+      Color("BackgrounbdColor")
+        .edgesIgnoringSafeArea(.all)
+      
+      VStack(spacing: 10) {
+        HeaderView()
+        LabelView()
+        RowView(index: 1, score: 60, date: Date())
+      }
+    }
+  }
+}
+
+struct HeaderView: View {
+  @Environment(\.verticalSizeClass) var verticalSizeClass
+  @Environment(\.horizontalSizeClass) var horizontalSizeClass
+  
+  var body: some View {
+    ZStack {
+      HStack {
+        if verticalSizeClass == .regular &&
+            horizontalSizeClass == .compact {
+          BigBoldText(text: "Leaderboard")
+            .padding(.leading)
+          Spacer()
+        } else {
+          BigBoldText(text: "Leaderboard")
+        }
+      }
+      HStack {
+        Spacer()
+        Button(action: {}) {
+          RoundedImageViewFilled(systemName: "xmark")
+            .padding(.trailing)
+        }
+      }
+    }
+  }
+}
+
+struct LabelView: View {
+  var body: some View {
+    HStack {
+      Spacer()
+        .frame(width: Constants.General.roundedViewLength)
+      Spacer()
+      LabelText(text: "Score")
+        .frame(width: Constants.Leaderboard.leaderboardScoreColumnWidth)
+      LabelText(text: "Time")
+        .frame(width: Constants.Leaderboard.leaderboardDateColumnWidth)
+    }
+    .padding(.leading)
+    .padding(.trailing)
+    .frame(maxWidth: Constants.Leaderboard.leaderboardMaxiumRowWidth)
   }
 }
 
@@ -21,6 +74,7 @@ struct RowView: View {
   var body: some View {
     HStack {
       RoundedTextView(text: String(index))
+      Spacer()
       ScoreText(score: score)
         .frame(width: Constants.Leaderboard.leaderboardScoreColumnWidth)
       DateText(date: date)
@@ -28,7 +82,8 @@ struct RowView: View {
     }
     .background(RoundedRectangle(cornerRadius: .infinity)
                   .strokeBorder(Color("LeaderboardRowColor"), lineWidth: Constants.General.strokeWidth))
-    .padding(.horizontal)
+    .padding(.leading)
+    .padding(.trailing)
     .frame(maxWidth: Constants.Leaderboard.leaderboardMaxiumRowWidth)
   }
   
