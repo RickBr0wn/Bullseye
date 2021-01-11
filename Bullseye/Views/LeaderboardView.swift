@@ -8,16 +8,27 @@
 import SwiftUI
 
 struct LeaderboardView: View {
+  @Binding var leaderboardIsShowing: Bool
+  @Binding var game: Game
+  
   var body: some View {
     ZStack {
-      Color("BackgrounbdColor")
+      Color("BackgroundColor")
         .edgesIgnoringSafeArea(.all)
       
       VStack(spacing: 10) {
-        HeaderView()
+        HeaderView(leaderboardIsShowing: $leaderboardIsShowing)
         LabelView()
-        RowView(index: 1, score: 60, date: Date())
+        ScrollView {
+          VStack(spacing: 10) {
+            ForEach(game.leaderboardEntries.indices) { index in
+              let leaderboardEntry = game.leaderboardEntries[index]
+              RowView(index: index, score: leaderboardEntry.score, date: leaderboardEntry.date)
+            }
+          }
+        }
       }
+      
     }
   }
 }
@@ -25,6 +36,7 @@ struct LeaderboardView: View {
 struct HeaderView: View {
   @Environment(\.verticalSizeClass) var verticalSizeClass
   @Environment(\.horizontalSizeClass) var horizontalSizeClass
+  @Binding var leaderboardIsShowing: Bool
   
   var body: some View {
     ZStack {
@@ -38,9 +50,13 @@ struct HeaderView: View {
           BigBoldText(text: "Leaderboard")
         }
       }
+      .padding(.top)
+      
       HStack {
         Spacer()
-        Button(action: {}) {
+        Button(action: {
+          leaderboardIsShowing = false
+        }) {
           RoundedImageViewFilled(systemName: "xmark")
             .padding(.trailing)
         }
@@ -90,17 +106,20 @@ struct RowView: View {
 }
 
 struct LeaderboardView_Previews: PreviewProvider {
+  static private var leaderboardIsShowing = Binding.constant(false)
+  static private var game = Binding.constant(Game(loadTestData: true))
+  
   static var previews: some View {
-    LeaderboardView()
+    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game)
     
-    LeaderboardView()
+    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game)
       .previewLayout(.fixed(width: Constants.Previews.previewLandscapeWidth, height: Constants.Previews.previewLandscapeHeight))
       .padding()
     
-    LeaderboardView()
+    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game)
       .preferredColorScheme(.dark)
     
-    LeaderboardView()
+    LeaderboardView(leaderboardIsShowing: leaderboardIsShowing, game: game)
       .preferredColorScheme(.dark)
       .previewLayout(.fixed(width: Constants.Previews.previewLandscapeWidth, height: Constants.Previews.previewLandscapeHeight))
       .padding()

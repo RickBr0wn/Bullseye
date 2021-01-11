@@ -37,6 +37,7 @@ struct NumberView: View {
 
 struct TopView: View {
   @Binding var game: Game
+  @State private var leaderboardIsShowing = false
   
   var body: some View {
     VStack {
@@ -47,7 +48,14 @@ struct TopView: View {
           RoundedImageViewStroked(systemName: "arrow.counterclockwise")
         }
         Spacer()
-        RoundedImageViewFilled(systemName: "list.dash")
+        Button(action: {
+          leaderboardIsShowing = true
+        }) {
+          RoundedImageViewFilled(systemName: "list.dash")
+        }
+        .sheet(isPresented: $leaderboardIsShowing, onDismiss: {}, content: {
+          LeaderboardView(leaderboardIsShowing: $leaderboardIsShowing, game: $game)
+        })
       }
     }
   }
@@ -92,5 +100,7 @@ struct BackgroundView_Previews: PreviewProvider {
   static var previews: some View {
       BackgroundView(game: .constant(Game()))
         .preferredColorScheme(.dark)
+    
+    BackgroundView(game: .constant(Game()))
   }
 }
